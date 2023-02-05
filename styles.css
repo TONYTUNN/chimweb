@@ -1,0 +1,33 @@
+body{
+    min-height: 100vh;
+    background-image: linear-gradient(
+        to top , #ff6496 , #43485e
+    );
+    margin: 0;
+    display: flex;
+    justify-content: center; /* căn giữa theo chiều ngang */
+    align-items: center; /* căn giữa theo chiều dọc */
+}
+.zoom{
+    width: max-content; /* chiều rộng bằng nội dung bên trong */
+    position: relative; /* cha */
+
+}
+.zoom img{
+    width: 500px;
+
+}
+#imgZoom {
+    position: absolute; /* nhận position : relative làm cha ở class zoom */
+    left: 0;
+    top: 0;
+    --zoom-x:50%;/* đặt biến và giá trị của biến */
+    --zoom-y:50%;
+    transform: scale(1.5); /* nhân kích thước của ảnh lên 1.5 lần so với ban đầu */
+    opacity: 0.5;
+    pointer-events: none; /* không cho người dùng rê chuột vào nó mà nều mà rê thì sẽ rê vào hình 1 thay vì vào nó */
+    clip-path: circle( 
+        100px at var(--zoom-x) var(--zoom-y)) ; /* cắt hình dạng element mà nó mong muốn */
+    opacity: 0;
+
+}
